@@ -19,11 +19,11 @@ public class GameOfLife extends Applet implements ActionListener, KeyListener {
 	public void init() {
 		this.setLayout(new BorderLayout());
 		c = new LifeCanvas(this);
-        c.setBackground(Color.white);
-        c.addMouseListener(c);
-        c.addMouseMotionListener(c);
-        c.addKeyListener(this);
-        this.add("Center", c);
+        	c.setBackground(Color.white);
+        	c.addMouseListener(c);
+        	c.addMouseMotionListener(c);
+        	c.addKeyListener(this);
+        	this.add("Center", c);
 		this.add("North", setLabelPanel());
 		this.add("South", setButtonPanel());
 	}
@@ -81,47 +81,47 @@ public class GameOfLife extends Applet implements ActionListener, KeyListener {
 	
 	// calls button methods
 	public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == runButton) {
-        	c.runButton();
-        } else if (e.getSource() == stepButton) {
-        	c.step();
-        } else if (e.getSource() == clearButton) {
-        	c.clear();
-        } else if (e.getSource() == randomButton) {
-        	c.random();
-        } else if (e.getSource() == speedUpButton) {
-        	c.speedUp();
-        	speedLabel.setText("Speed: " + c.getSpeed());
-        } else if (e.getSource() == speedDownButton) {
-        	c.speedDown();
-        	speedLabel.setText("Speed: " + c.getSpeed());
-        } else if (e.getSource() == zoomInButton) {
-        	c.zoomIn();
-        } else if (e.getSource() == zoomOutButton) {
-        	c.zoomOut();
-        }
-    }
+		if (e.getSource() == runButton) {
+			c.runButton();
+		} else if (e.getSource() == stepButton) {
+			c.step();
+		} else if (e.getSource() == clearButton) {
+			c.clear();
+		} else if (e.getSource() == randomButton) {
+			c.random();
+		} else if (e.getSource() == speedUpButton) {
+			c.speedUp();
+			speedLabel.setText("Speed: " + c.getSpeed());
+		} else if (e.getSource() == speedDownButton) {
+			c.speedDown();
+			speedLabel.setText("Speed: " + c.getSpeed());
+		} else if (e.getSource() == zoomInButton) {
+			c.zoomIn();
+		} else if (e.getSource() == zoomOutButton) {
+			c.zoomOut();
+		}
+    	}
 	
 	// calls key methods
 	public void keyPressed(KeyEvent e) {
 		int keyCode = e.getKeyCode();               
-        if (keyCode == KeyEvent.VK_UP) {
-            c.moveOrigin(0, -1);
-        } else if (keyCode == KeyEvent.VK_DOWN) {
-            c.moveOrigin(0, 1);
-        } else if (keyCode == KeyEvent.VK_LEFT ) {
-            c.moveOrigin(-1, 0);
-        } else if (keyCode == KeyEvent.VK_RIGHT ) {
-            c.moveOrigin(1, 0);
-        }
+	        if (keyCode == KeyEvent.VK_UP) {
+	            c.moveOrigin(0, -1);
+	        } else if (keyCode == KeyEvent.VK_DOWN) {
+	            c.moveOrigin(0, 1);
+	        } else if (keyCode == KeyEvent.VK_LEFT ) {
+	            c.moveOrigin(-1, 0);
+	        } else if (keyCode == KeyEvent.VK_RIGHT ) {
+	            c.moveOrigin(1, 0);
+	        }
 	}
 	
 	public void updateRunButton() {
-    	if (c.active) {
-    		runButton.setLabel("Stop");
-    	} else {
-    		runButton.setLabel("Run");
-    	}
+	    	if (c.active) {
+	    		runButton.setLabel("Stop");
+	    	} else {
+	    		runButton.setLabel("Run");
+	    	}
 	}
 	
 	public void updateGenerationLabel() {
@@ -131,4 +131,5 @@ public class GameOfLife extends Applet implements ActionListener, KeyListener {
 	// other required key methods
 	public void keyTyped(KeyEvent e) {}
 	public void keyReleased(KeyEvent e) {}
+	
 }
