@@ -16,8 +16,8 @@ public class LifeCanvas extends Canvas implements Runnable, MouseListener, Mouse
 	boolean active = false;
 	boolean dragColor = true;
 	boolean isMousePressed = false;
-    Image offscreen;
-    Dimension offscreensize;
+    	Image offscreen;
+    	Dimension offscreensize;
 	Graphics g2;
 	GameOfLife parent;
 	private Thread t;
@@ -33,11 +33,9 @@ public class LifeCanvas extends Canvas implements Runnable, MouseListener, Mouse
 	
 	// paint method
 	public void update(Graphics g) {
-		
 		Dimension d = getSize();
-		if ((offscreen == null)
-			|| (d.width != offscreensize.width)
-	        || (d.height != offscreensize.height)) {
+		if ((offscreen == null) || (d.width != offscreensize.width)
+	        			|| (d.height != offscreensize.height)) {
 			offscreen = createImage(d.width, d.height);
 			offscreensize = d;
 			g2 = offscreen.getGraphics();
@@ -61,6 +59,7 @@ public class LifeCanvas extends Canvas implements Runnable, MouseListener, Mouse
 		}
 		g.drawImage(offscreen, 0, 0, null);
 	} 
+	
 	// paint method
 	public void paint(Graphics g) {
 		update(g);
